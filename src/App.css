@@ -1,0 +1,823 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* for navbar */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4b4b4b; /* Dark Gray */
+  padding: 10px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: #0B61F7 !important; /* Vivid Blue */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-link {
+  color: #0B61F7; /* Vivid Blue */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #4A8EF9; /* Light Blue */
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #0B61F7;
+  --bs-btn-border-color: #0B61F7;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4A8EF9;
+  --bs-btn-hover-border-color: #4A8EF9;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #084EC5;
+  --bs-btn-active-border-color: #084EC5;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #0B61F7;
+  --bs-btn-disabled-border-color: #0B61F7;
+}
+
+.btn-outline-success {
+  color: #0B61F7;
+  border-color: #4b4b4b;
+  margin-left: 5px;
+}
+
+.btn-outline-success:hover {
+  background-color: #4b4b4b;
+  border-color: #4b4b4b;
+}
+
+a {
+  color: #0B61F7;
+  text-decoration: underline;
+}
+
+.btn-outline-success {
+  color: #0B61F7;
+  border-color: #4b4b4b; /* Dark Gray */
+}
+
+.btn-outline-success:hover {
+  background-color: #4b4b4b; /* Dark Gray */
+  border-color: #4b4b4b; /* Dark Gray */
+}
+
+/* Light mode styles */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.navbar.bg-body-tertiary {
+  background-color: #f8f9fa;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .nav-link {
+  color: #343a40;
+}
+
+.navbar-light .nav-link.active {
+  color: #0B61F7; /* Vivid Blue */
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #020202;
+  color: #ffffff;
+}
+
+.navbar.bg-dark {
+  background-color: #020202;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+  color: #0B61F7; /* Vivid Blue */
+}
+
+.navbar-dark .nav-link.active {
+  color: #faf8f9;
+}
+
+
+/* for date and day  */
+.date-display {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 10px 10px 10px;
+  background-color: #e0e0e0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.date-display .date {
+  color: #0B61F7;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.date-display .day {
+  color: #0B61F7;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+/* Fact generator */
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #e0e0e0; /* Light Gray */
+  border: 1px solid #4b4b4b; /* Dark Gray */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* FactBox component */
+.fact-box {
+  background-color: #e0e0e0; /* Light Gray */
+  border: 1px solid #4b4b4b; /* Dark Gray */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  color: #343a40; /* Dark text */
+}
+
+/* taskbar */
+.taskbar {
+  width: 50%;
+  margin: 20px auto; /* Centers the taskbar horizontally */
+  display: flex;
+  justify-content: center;
+}
+/* css not working */
+/* Scheduling the tasks */
+.container {
+  margin: 20px;
+}
+
+.scheduler {
+  border: 4px solid #4b4b4b; /* Dark Gray */
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  margin: 10px;
+  font-size: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.todo, .in-progress, .completed , .stage {
+  border: 2px solid #4b4b4b; /* Dark Gray */
+  background-color: #8DB5FB; /* Lighter Blue */
+  flex-grow: 1;
+  flex-basis: 0%;
+  padding-top: 12px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Inside the To Do Box and In Progress Box */
+.desc {
+  margin: 20px;
+  font-size: 15px;
+  text-align: left;
+  height: auto;
+  width: auto;
+  padding: 10px;
+}
+
+.control .disabled {
+  opacity: 0.5;
+}
+
+.priority-button {
+  margin: 5px;
+}
+
+.high-priority {
+  color: red; /* Example color for high priority tasks */
+}
+
+.task-item {
+  margin-bottom: 10px;
+}
+
+.edit, .edit.save {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.edit.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.bin {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.left, .right {
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.left.disabled, .right.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Scheduling the tasks */
+.container {
+  margin: 20px;
+}
+
+div .scheduler {
+  border: 4px solid #4b4b4b; /* Dark Gray */
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  margin: 10px;
+  font-size: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.todo, .inprogress, .completed {
+  border: 2px solid #4b4b4b; /* Dark Gray */
+  background-color: #8DB5FB; /* Lighter Blue */
+  flex-grow: 1;
+  flex-basis: 0%;
+  padding-top: 12px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Inside the To Do Box and In Progress Box */
+.desc {
+  margin: 20px;
+  font-size: 15px;
+  text-align: left;
+  height: auto;
+  width: auto;
+  padding: 10px;
+}
+
+.control .disabled {
+  opacity: 0.5;
+}
+
+#tasks {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #e0e0e0; /* Light Gray */
+  border: 2px solid #4b4b4b; /* Dark Gray */
+  padding: 10px;
+  margin-bottom: 5px; /* 5px gap between tasks */
+  border-radius: 4px;
+}
+
+.control {
+  display: flex;
+  font-size: 20px;
+  gap: 45px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.desc ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.desc ul li {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.control div {
+  cursor: pointer;
+  color: #0B61F7; /* Vivid Blue */
+}
+
+/* Task input */
+.taskbar {
+  width: 50%;
+  margin: 20px auto; /* Centers the taskbar horizontally */
+  display: flex;
+  justify-content: center;
+}
+
+#task-form {
+  width: 100%;
+  display: flex;
+}
+
+#task-form input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #4b4b4b; /* Dark Gray */
+  border-radius: 4px;
+}
+
+#task-form input[type="submit"] {
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #0B61F7; /* Vivid Blue */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#task-form input[type="submit"]:hover {
+  background-color: #4A8EF9; /* Light Blue */
+}
+
+#tasks {
+  list-style: none;
+  padding: 0;
+}
+Scheduling the tasks
+.container {
+  margin: 20px;
+}
+
+.scheduler {
+  border: 4px solid #4b4b4b; /* Dark Gray */
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  margin: 10px;
+  font-size: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
+  }
+
+.todo, .in-progress, .completed {
+  border: 2px solid #4b4b4b; /* Dark Gray */
+  background-color: #8DB5FB; /* Lighter Blue */
+  flex-grow: 1;
+  flex-basis: 0%;
+  padding-top: 12px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Inside the To Do Box and In Progress Box */
+.desc {
+  margin: 20px;
+  font-size: 15px;
+  text-align: left;
+  height: auto;
+  width: auto;
+  padding: 10px;
+}
+
+.control .disabled {
+  opacity: 0.5;
+}
+
+#tasks {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #e0e0e0; /* Light Gray */
+  border: 2px solid #4b4b4b; /* Dark Gray */
+  padding: 10px;
+  margin-bottom: 5px; /* 5px gap between tasks */
+  border-radius: 4px;
+}
+
+.control {
+  display: flex;
+  font-size: 20px;
+  gap: 45px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.desc ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.desc ul li {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.control div {
+  cursor: pointer;
+  color: #0B61F7; /* Vivid Blue */
+}
+/* TaskDesc Component Styles */
+/* .desc {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+} */
+
+/* Background and border color for high priority tasks
+.desc.high-priority {
+  background-color: #E0E0E0;
+  border: 2px solid red;
+} */
+
+/* Priority Button Styles */
+.priority-button {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.priority-button.low {
+  background-color: green;
+}
+
+.priority-button.medium {
+  background-color: yellow;
+  color: black; /* Ensure text is readable on yellow background */
+}
+
+.priority-button.high {
+  background-color: red;
+}
+.task-item.high-priority {
+  background-color: #cdcdcd;
+  border-color: red;
+}
+
+/* drop down */
+/* Base styles for navbar */
+.navbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  }
+  
+  .navbar-toggler {
+        border: none;
+  }
+  
+  .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  /* Styles for the dropdown menu */
+  .navbar-collapse {
+        position: absolute;
+        top: 56px; /* height of the navbar */
+        width: 90%;
+        background-color: #fff;
+        border-radius: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+  }
+  
+  /* Hide the dropdown menu by default */
+  .collapse:not(.show) {
+        display: none;
+  }
+  
+  /* 3D effect using box-shadow */
+  .navbar-collapse {
+        border-radius: 0.7rem;
+        box-shadow: 0 20px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles for the search box */
+  /* .search-box {
+        position: relative;
+  }
+  
+  .search-box .clear-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6c757d;
+  } */
+  .navbarSupportedConten{
+        width: 100%;
+        margin-left: 0%;
+        padding-left: 0%;
+  }
+  /* Ensure dropdown menu width on larger screens */
+  @media (min-width: 992px) {
+        .navbar-collapse {
+        position: relative;
+        top: auto;
+        width: auto;
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        }
+  }
+
+  /* footer */
+  .navbar-brand1 {
+    text-align: center;
+    margin: 0;
+    color: #0B61F7; 
+    width: 100%;
+  } 
+
+
+  /*darl light mode  */
+  :root {
+    --background-color: white;
+    --text-color: black;
+    --navbar-background: #f8f9fa;
+    --navbar-text-color: black;
+    --button-background: #007bff;
+    --button-text-color: white;
+  }
+  
+  body.dark-mode {
+    --background-color: #181818;
+    --text-color: #e0e0e0;
+    --navbar-background: #343a40;
+    --navbar-text-color: white;
+    --button-background: #007bff;
+    --button-text-color: white;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar {
+    background-color: var(--navbar-background);
+    color: var(--navbar-text-color);
+  }
+  
+  .nav-link {
+    color: var(--navbar-text-color) !important;
+  }
+  
+  .btn {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+  }
+  
+  .task-item {
+    /* background-color: var(--background-color); */
+    /* color: var(--text-color); */
+  }
+  
+  .priority-button.low {
+    background-color: #9dd2ba;
+    /* color: var(--text-color); */
+  }
+  
+  .priority-button.medium {
+    background-color: #ffe69d;
+    /* color: var(--text-color); */
+  }
+  
+  .priority-button.high {
+    background-color: #fb9199;
+    /* color: var(--text-color); */
+  }
+  
+  /* styles.css */
+
+body {
+  transition: background-color 0.1s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-mode {
+  background-color: #cacaca;
+  color: #fff;
+}
+
+.navbar.dark-mode {
+  background-color: #444;
+  border-color: #444;
+}
+
+.navbar.light-mode {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+/* Deleted tasks */
+.deleted-tasks {
+  background-color: #b6b6b6;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.deleted-tasks h2 {
+  color: #0B61F7; /* Vivid Blue */
+}
+
+.deleted-tasks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.deleted-tasks li {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e0e0e0; /* Light Gray */
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.deleted-tasks button {
+  background-color: #0B61F7; /* Vivid Blue */
+  color: white;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.deleted-tasks button:hover {
+  background-color: #4A8EF9; /* Light Blue */
+}
+
+.mode {
+  background-color: #f5f5f5;
+  padding: 1rem;
+}
+
+.mode h2 {
+  color: #0B61F7; /* Vivid Blue */
+}
+
+.mode button {
+  background-color: #0B61F7; /* Vivid Blue */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.mode button:disabled {
+  background-color: #4b4b4b; /* Dark Gray */
+}
+
+/* Theme.css */
+
+:root {
+  --primary-color-light: #0B61F7;
+  --background-color-light: #c1c1c1;
+  --text-color-light: #000000;
+  --navbar-bg-light: #f8f9fa;
+  --navbar-text-light: #000000;
+
+  --primary-color-dark: #0B61F7;
+  --background-color-dark: #2c2c2c;
+  --text-color-dark: #ffffff;
+  --navbar-bg-dark: #343a40;
+  --navbar-text-dark: #ffffff;
+}
+
+body.dark {
+  --primary-color: var(--primary-color-light);
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --navbar-bg: var(--navbar-bg-light);
+  --navbar-text: var(--navbar-text-light);
+}
+
+body.light {
+  --primary-color: var(--primary-color-dark);
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --navbar-bg: var(--navbar-bg-dark);
+  --navbar-text: var(--navbar-text-dark);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navbar {
+  background-color: #969da9 !important;
+  color: var(--navbar-text) !important;
+}
+
+.clear-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+/* Navbar link default style */
+.navbar-nav .nav-link {
+  color: inherit; /* Inherit the color from parent, or set a default color */
+  transition: color 0.3s ease;
+}
+
+/* Navbar link hover style */
+.navbar-nav .nav-link:hover {
+  color: #0B61F7; /* Optional: Change color on hover */
+}
+
+/* Active navbar link style */
+.navbar-nav .nav-link.active {
+  color: #0B61F7; /* Set the active link color */
+  font-weight: bold; /* Optional: Make the active link bold */
+}
+a.nav-link.active{
+  color: #0B61F7 !important;
+}
+
+
